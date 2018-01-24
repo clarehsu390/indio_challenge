@@ -22,7 +22,7 @@ def upload(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         context['posted'] = form.instance
-        if form.isvalid():
+        if form.is_valid():
             form.save()
     return render(request, 'upload.html', context)
 
