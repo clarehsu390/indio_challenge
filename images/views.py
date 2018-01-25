@@ -9,11 +9,7 @@ from .forms import ImageForm
 # Create your views here.
 def index(request):
     images = Image.objects.all().order_by('created_at')
-    context = {
-        'images': images
-    }
-    template = loader.get_template('index.html')
-    return HttpResponse(template.render(context, request))
+    return render(request, 'index.html', dict(images=images))
 
 def upload(request):
     context = dict( backend_form = ImageForm())
