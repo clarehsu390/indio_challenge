@@ -5,7 +5,6 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
 from .models import Image
-from cloudinary.forms import cli_init_js_callbacks
 from .forms import ImageForm
 # Create your views here.
 def index(request):
